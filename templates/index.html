@@ -11,8 +11,9 @@
 </head>
 
 <body>
-  <div class="container text-center">
-    <h1 class="jumbotron">Mission to Mars</h1>
+  <div class="container text-center jumbotron">
+    <h1 >Mission to Mars</h1>
+    <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
   </div>
   <div class="container">
     <div class="row">
@@ -20,6 +21,36 @@
             <h3>Latest Mars News</h3>
                 <h4>{{ mars_data.news_title }}</h4>
                 <p>{{ mars_data.news_p }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <h3>Featured Mars Image</h3>
+            <a href="{{ mars_data.featured_image_url }}" class="thumbnail">
+                <img src="{{ mars_data.featured_image_url }}" alt="...">
+          </a>
+        </div>
+        <div class="col-lg-4">
+          <table border = 1>
+            <tr>
+            <td >
+            <h4>Current Weather on Mars</h4>
+            <p>{{ mars_data.mars_weather }}</p>
+            </td>
+          </tr>
+          </table>
+          <br>
+          <br>
+          <table>
+          <tr>
+            <td>
+              
+                  <h4>Mars Facts</h4>
+                  <div>{{ mars_data.fact_html_table|safe }}</div>
+                
+            </td>
+          </tr>
+          </table>
         </div>
     </div>
     <div class="row">
