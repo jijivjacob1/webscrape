@@ -31,26 +31,17 @@
           </a>
         </div>
         <div class="col-lg-4">
-          <table border = 1>
-            <tr>
-            <td >
-            <h4>Current Weather on Mars</h4>
-            <p>{{ mars_data.mars_weather }}</p>
-            </td>
-          </tr>
-          </table>
+          <div style = "border :2px solid lightgrey; padding : 15px 30px 15px 10px;">
+              <h4>Current Weather on Mars</h4>
+              <p>{{ mars_data.mars_weather }}</p>
+          </div>
           <br>
           <br>
-          <table>
-          <tr>
-            <td>
-              
-                  <h4>Mars Facts</h4>
-                  <div>{{ mars_data.fact_html_table|safe }}</div>
-                
-            </td>
-          </tr>
-          </table>
+          <div>
+              <h4>Mars Facts</h4>
+              {{ mars_data.fact_html_table|safe }}
+          </div>
+         
         </div>
     </div>
     <div class="row">
@@ -58,6 +49,8 @@
             <h3>Mars Hemispheres</h3>
                
       </div>
+    </div>
+    <div class="row">
       <div class="col-lg-6">
           
         <a href="{{ mars_data.hemisphere_image_urls[0].img_url }}" class="thumbnail">
